@@ -8,6 +8,7 @@ public class RoomType : MonoBehaviour
 
 	public void RoomDestruction()
 	{
-		Destroy(gameObject);
+		//Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
 }

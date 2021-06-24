@@ -308,6 +308,22 @@ PrefabInstance:
       propertyPath: levelGen
       value: 
       objectReference: {fileID: 1300152805}
+    - target: {fileID: 7477004312119803363, guid: aca586e18e89e7a4e810b52ba2b92c83, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477004312281631499, guid: aca586e18e89e7a4e810b52ba2b92c83, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477004312517312158, guid: aca586e18e89e7a4e810b52ba2b92c83, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477004313081439458, guid: aca586e18e89e7a4e810b52ba2b92c83, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7477004313689422068, guid: aca586e18e89e7a4e810b52ba2b92c83, type: 3}
       propertyPath: m_Name
       value: MyGrid
@@ -369,6 +385,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Generation
       objectReference: {fileID: 0}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: rooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 400773510817652889, guid: 17216dfed0b8af3498aaef4c20905c9c, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: rooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 400773510817652889, guid: e80ce260b50284548bb3c3141ee0f3fb, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: rooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 400773510817652889, guid: ae0f6b466332b3542aca7a742e05219e, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: rooms.Array.data[3]
+      value: 
+      objectReference: {fileID: 400773510817652889, guid: 92255cb7d9526ac4f8c56405b5e63853, type: 3}
     - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
       propertyPath: startingPositions.Array.data[0]
       value: 
