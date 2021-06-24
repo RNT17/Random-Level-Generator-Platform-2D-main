@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class LevelEvent : UnityEvent<Vector2> { }
 
 public class LevelGeneration : MonoBehaviour
 {
     public static LevelGeneration instance = null;
     public Transform[] startingPositions;
 	public GameObject[] rooms; // index 0 --> closed, index 1 --> LR, index 2 --> LRB, index 3 --> LRT, index 4 --> LRBT
+	public GameObject[] roomsClosed;
+	public GameObject roomFirst;
+	public GameObject exit;
 	public float moveIncrement;
     public float minX;
     public float maxX;
     public float minY;
     public LayerMask whatIsRoom;
-
     [HideInInspector]
     public bool stopGeneration;
+	public LevelEvent levelEvent = new LevelEvent();
 
     private int direction;
     private int downCounter;
@@ -37,8 +43,10 @@ public class LevelGeneration : MonoBehaviour
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
 
-        Instantiate(rooms[0], transform.position, Quaternion.identity);       
-        direction = Random.Range(1, 6);        
+        Instantiate(roomFirst, transform.position, Quaternion.identity);
+        direction = Random.Range(1, 6);
+
+		levelEvent.AddListener(OnLastRoom);
     }
 
     void Update()
@@ -81,6 +89,7 @@ public class LevelGeneration : MonoBehaviour
             } else {
             	// STOP LEVEL GENERATION!!!	
             	stopGeneration = true;
+				levelEvent?.Invoke(transform.position);
             }
         }
     }
@@ -117,7 +126,7 @@ public class LevelGeneration : MonoBehaviour
 
 	void MoveDown()
 	{
-		//Debug.Log("Move Down");
+		Debug.Log("Move Down");
 		Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, whatIsRoom);
 		RoomType roomType = roomDetection?.GetComponent<RoomType>();
 
@@ -145,6 +154,12 @@ public class LevelGeneration : MonoBehaviour
 		Instantiate(rooms[rand], transform.position, Quaternion.identity);
 	
 		direction = Random.Range(1 ,6);
+	}
+
+	void OnLastRoom(Vector2 position)
+	{
+		Debug.Log("Last Room Was Created: " + position);
+		Instantiate(exit, position, Quaternion.identity);
 	}
 
 }

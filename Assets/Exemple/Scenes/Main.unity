@@ -386,6 +386,18 @@ PrefabInstance:
       value: Level Generation
       objectReference: {fileID: 0}
     - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: exit
+      value: 
+      objectReference: {fileID: 924200654064081482, guid: 381876565db353a46a696936b911ee7f, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: roomLast
+      value: 
+      objectReference: {fileID: 1835612701383604080, guid: f961680fb27f88c4aac69d04972c573a, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: roomFirst
+      value: 
+      objectReference: {fileID: 1835612701383604080, guid: 9551dd7bd7e7af3429105758cd0269b0, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
       propertyPath: rooms.Array.data[0]
       value: 
       objectReference: {fileID: 400773510817652889, guid: 17216dfed0b8af3498aaef4c20905c9c, type: 3}
@@ -401,6 +413,18 @@ PrefabInstance:
       propertyPath: rooms.Array.data[3]
       value: 
       objectReference: {fileID: 400773510817652889, guid: 92255cb7d9526ac4f8c56405b5e63853, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: roomsClosed.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: roomsClosed.Array.data[0]
+      value: 
+      objectReference: {fileID: 632272945020400149, guid: 09832473ceff78f4a866f23a37d107ac, type: 3}
+    - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
+      propertyPath: roomsClosed.Array.data[1]
+      value: 
+      objectReference: {fileID: 632272945020400149, guid: 01f0a154f945b4648bc455a0caf7a0cc, type: 3}
     - target: {fileID: 12159022458952652, guid: d885be499130b4946be481926d55528f, type: 3}
       propertyPath: startingPositions.Array.data[0]
       value: 
