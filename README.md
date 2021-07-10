@@ -47,6 +47,10 @@ Assets \
                 RLT Room Template
                 RLTB Room Template
             Rooms \
+                Rooms Closed \
+                    Room Closed
+                Exit
+                Room First
                 Room RL
                 Room RLB
                 Room RLT

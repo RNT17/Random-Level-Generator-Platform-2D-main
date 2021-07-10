@@ -19,9 +19,9 @@ public class LevelGeneration : MonoBehaviour
     public float maxX;
     public float minY;
     public LayerMask whatIsRoom;
-    [HideInInspector]
-    public bool stopGeneration;
-	public LevelEvent levelEvent = new LevelEvent();
+	public LevelEvent firtsRoomEvent = new LevelEvent();
+	public LevelEvent lastRoomEvent = new LevelEvent();
+    [HideInInspector] public bool stopGeneration;
 
     private int direction;
     private int downCounter;
@@ -36,6 +36,9 @@ public class LevelGeneration : MonoBehaviour
 
         // Sets this to not be destroyed when reloading scene
         //DontDestroyOnLoad(gameObject);   
+		
+		firtsRoomEvent.AddListener(PlayerController.OnFirstRoomWasCreated);
+		lastRoomEvent.AddListener(OnLastRoom);
     }
 
     void Start()
@@ -45,8 +48,7 @@ public class LevelGeneration : MonoBehaviour
 
         Instantiate(roomFirst, transform.position, Quaternion.identity);
         direction = Random.Range(1, 6);
-
-		levelEvent.AddListener(OnLastRoom);
+		firtsRoomEvent.Invoke(transform.position);
     }
 
     void Update()
@@ -89,7 +91,7 @@ public class LevelGeneration : MonoBehaviour
             } else {
             	// STOP LEVEL GENERATION!!!	
             	stopGeneration = true;
-				levelEvent?.Invoke(transform.position);
+				lastRoomEvent?.Invoke(transform.position);
             }
         }
     }
